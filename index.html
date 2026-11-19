@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SkillBridge connects learning, practical experience and income opportunities.">
   <meta name="theme-color" content="#0b1728">
+
   <title>SkillBridge — Learn. Prove. Earn.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Theme initialization -->
   <script>
     (() => {
       try {
         const savedTheme = localStorage.getItem("skillbridge-theme");
-        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+
         document.documentElement.dataset.theme = savedTheme || preferredTheme;
       } catch (_) {
         document.documentElement.dataset.theme = "light";
@@ -25,56 +29,62 @@
     })();
   </script>
 
- <img src="/skillbridge-logo-html.png" alt="SkillBridge Logo" class="logo">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- UPDATED SKILLBRIDGE LOGO DIMENSIONS -->
+  <!-- SKILLBRIDGE LOGO STYLING -->
   <style>
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
     .brand-logo {
       display: block;
       width: 145px;
-      height: auto;
+      height: 40px;
       max-width: 100%;
-      max-height: 40px;
       object-fit: contain;
       object-position: left center;
+      flex-shrink: 0;
     }
 
     .site-header .brand-logo {
       width: 145px;
-      max-height: 40px;
+      height: 40px;
     }
 
     .sidebar-brand .brand-logo {
       width: 140px;
-      max-height: 38px;
+      height: 38px;
     }
 
     .auth-aside .brand-logo {
       width: 150px;
-      max-height: 41px;
+      height: 41px;
     }
 
     .site-footer .brand-logo {
       width: 130px;
-      max-height: 36px;
+      height: 36px;
     }
 
     @media (max-width: 768px) {
       .site-header .brand-logo {
         width: 120px;
-        max-height: 33px;
+        height: 34px;
       }
 
       .sidebar-brand .brand-logo,
       .auth-aside .brand-logo {
         width: 130px;
-        max-height: 36px;
+        height: 36px;
       }
 
       .site-footer .brand-logo {
         width: 115px;
-        max-height: 32px;
+        height: 32px;
       }
     }
   </style>
@@ -88,7 +98,11 @@
 
     <header class="site-header container">
       <a class="brand" href="#" data-view="landing" aria-label="SkillBridge home">
-        <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+        <img
+          class="brand-logo"
+          src="/assets/skillbridge-logo-html.png"
+          alt="SkillBridge — Bridging Skills to Opportunities"
+        >
       </a>
 
       <nav class="desktop-nav" aria-label="Main navigation">
@@ -104,6 +118,7 @@
         </button>
 
         <button class="btn btn-ghost" data-view="login">Log in</button>
+
         <button class="btn btn-primary" data-view="signup">
           Get started <span aria-hidden="true">↗</span>
         </button>
@@ -130,6 +145,7 @@
           <button class="btn btn-primary btn-large" data-view="signup">
             Start your journey <span aria-hidden="true">→</span>
           </button>
+
           <a class="btn btn-outline btn-large" href="#how-it-works">See how it works</a>
         </div>
 
@@ -332,8 +348,12 @@
     <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container footer-inner">
-        <a class="brand" href="#">
-          <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+        <a class="brand" href="#" data-view="landing">
+          <img
+            class="brand-logo"
+            src="/assets/skillbridge-logo-html.png"
+            alt="SkillBridge — Bridging Skills to Opportunities"
+          >
         </a>
 
         <p>Learn skills. Prove your ability. Build your future.</p>
@@ -347,7 +367,11 @@
 
     <div class="auth-aside">
       <a class="brand" href="#" data-view="landing">
-        <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+        <img
+          class="brand-logo"
+          src="/assets/skillbridge-logo-html.png"
+          alt="SkillBridge — Bridging Skills to Opportunities"
+        >
       </a>
 
       <div class="auth-aside-content">
@@ -459,7 +483,11 @@
 
     <aside class="sidebar" id="sidebar">
       <a class="brand sidebar-brand" href="#" data-view="dashboard">
-        <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+        <img
+          class="brand-logo"
+          src="/assets/skillbridge-logo-html.png"
+          alt="SkillBridge — Bridging Skills to Opportunities"
+        >
       </a>
 
       <div class="sidebar-label">WORKSPACE</div>
@@ -700,54 +728,81 @@
             <p class="learning-hint">Course matches will appear here in SkillBridge. Choose a platform to narrow the results, or search across all supported platforms.</p>
           </div>
 
-          <div class="platform-filter-bar"><span>Browse by platform</span><button class="btn btn-outline platform-search" id="allPlatformsBtn" type="button">All platforms</button></div>
+          <div class="platform-filter-bar">
+            <span>Browse by platform</span>
+            <button class="btn btn-outline platform-search" id="allPlatformsBtn" type="button">All platforms</button>
+          </div>
+
           <div class="learning-platform-grid">
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark youtube-mark">▶</span><div><h3>YouTube</h3><p>Video lessons, tutorials and practical demonstrations</p></div></div>
               <span class="soft-pill">Free resources available</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="youtube">Show YouTube courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark coursera-mark">C</span><div><h3>Coursera</h3><p>Courses and professional certificates from institutions</p></div></div>
               <span class="soft-pill">Free and paid options</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="coursera">Show Coursera courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark alison-mark">A</span><div><h3>Alison</h3><p>Career-focused courses across many subject areas</p></div></div>
               <span class="soft-pill">Free learning options</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="alison">Show Alison courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark edx-mark">edX</span><div><h3>edX</h3><p>Academic and professional courses from universities</p></div></div>
               <span class="soft-pill">Audit and paid options</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="edx">Show edX courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark udemy-mark">U</span><div><h3>Udemy</h3><p>Practical, topic-based courses taught by instructors</p></div></div>
               <span class="soft-pill">Mostly paid courses</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="udemy">Show Udemy courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark fcc-mark">{ }</span><div><h3>freeCodeCamp</h3><p>Free coding lessons, projects and certifications</p></div></div>
               <span class="soft-pill">Free</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="freecodecamp">Show freeCodeCamp courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark khan-mark">K</span><div><h3>Khan Academy</h3><p>Free foundational lessons in academic subjects</p></div></div>
               <span class="soft-pill">Free</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="khan">Show Khan Academy courses</button>
             </article>
+
             <article class="learning-platform-card">
               <div class="platform-heading"><span class="platform-mark microsoft-mark">M</span><div><h3>Microsoft Learn</h3><p>Technical training and learning paths for Microsoft tools</p></div></div>
               <span class="soft-pill">Free learning paths</span>
               <button class="btn btn-outline platform-search" type="button" data-platform="microsoft">Show Microsoft Learn courses</button>
             </article>
           </div>
+
           <section class="course-results-section" aria-live="polite">
-            <div class="results-heading"><div><span class="eyebrow">COURSE DISCOVERY</span><h2 id="courseResultsTitle">Explore learning resources</h2><p id="courseResultsMeta">Search a topic to see course and learning-resource listings from supported platforms.</p></div><button class="btn btn-outline" id="refreshCoursesBtn" type="button">↻ Refresh courses</button></div>
+            <div class="results-heading">
+              <div>
+                <span class="eyebrow">COURSE DISCOVERY</span>
+                <h2 id="courseResultsTitle">Explore learning resources</h2>
+                <p id="courseResultsMeta">Search a topic to see course and learning-resource listings from supported platforms.</p>
+              </div>
+              <button class="btn btn-outline" id="refreshCoursesBtn" type="button">↻ Refresh courses</button>
+            </div>
+
             <div id="courseSearchStatus" class="search-status" role="status"></div>
-            <div id="courseResults" class="discovery-results"><div class="empty-results"><strong>Your next skill starts here.</strong><p>Search for a subject above. Course options will be organised here, without sending you to Google.</p></div></div>
+
+            <div id="courseResults" class="discovery-results">
+              <div class="empty-results">
+                <strong>Your next skill starts here.</strong>
+                <p>Search for a subject above. Course options will be organised here, without sending you to Google.</p>
+              </div>
+            </div>
           </section>
+
           <p class="demo-disclaimer">Course listings are retrieved from web search results. SkillBridge does not own these courses; availability, pricing, certificates and access requirements are controlled by each provider.</p>
         </section>
 
@@ -763,22 +818,102 @@
 
           <form class="opportunity-search-panel panel" id="opportunitySearchForm">
             <div class="opportunity-filter-grid">
-              <div class="filter-field filter-wide"><label for="opportunitySearch">Keywords, role or skill</label><input id="opportunitySearch" type="search" placeholder="e.g. junior developer, tailoring, data analysis"></div>
-              <div class="filter-field"><label for="opportunityType">Opportunity type</label><select id="opportunityType"><option value="">All opportunities</option><option>Jobs</option><option>Internships</option><option>Apprenticeships</option><option>Scholarships</option><option>Grants</option><option>Freelance projects</option><option>Volunteering</option></select></div>
-              <div class="filter-field"><label for="opportunityLocation">Location</label><input id="opportunityLocation" placeholder="e.g. Nigeria, Lagos, worldwide"></div>
-              <div class="filter-field"><label for="opportunityMode">Work arrangement</label><select id="opportunityMode"><option value="">Any arrangement</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></div>
-              <div class="filter-field"><label for="opportunityLevel">Experience / study level</label><select id="opportunityLevel"><option value="">Any level</option><option>Entry level</option><option>Beginner</option><option>Student</option><option>Graduate</option><option>Mid level</option><option>Experienced</option></select></div>
-              <div class="filter-field"><label for="opportunityPay">Compensation</label><select id="opportunityPay"><option value="">Any compensation</option><option>Paid</option><option>Unpaid</option><option>Fully funded</option></select></div>
+              <div class="filter-field filter-wide">
+                <label for="opportunitySearch">Keywords, role or skill</label>
+                <input id="opportunitySearch" type="search" placeholder="e.g. junior developer, tailoring, data analysis">
+              </div>
+
+              <div class="filter-field">
+                <label for="opportunityType">Opportunity type</label>
+                <select id="opportunityType">
+                  <option value="">All opportunities</option>
+                  <option>Jobs</option>
+                  <option>Internships</option>
+                  <option>Apprenticeships</option>
+                  <option>Scholarships</option>
+                  <option>Grants</option>
+                  <option>Freelance projects</option>
+                  <option>Volunteering</option>
+                </select>
+              </div>
+
+              <div class="filter-field">
+                <label for="opportunityLocation">Location</label>
+                <input id="opportunityLocation" placeholder="e.g. Nigeria, Lagos, worldwide">
+              </div>
+
+              <div class="filter-field">
+                <label for="opportunityMode">Work arrangement</label>
+                <select id="opportunityMode">
+                  <option value="">Any arrangement</option>
+                  <option>Remote</option>
+                  <option>Hybrid</option>
+                  <option>On-site</option>
+                </select>
+              </div>
+
+              <div class="filter-field">
+                <label for="opportunityLevel">Experience / study level</label>
+                <select id="opportunityLevel">
+                  <option value="">Any level</option>
+                  <option>Entry level</option>
+                  <option>Beginner</option>
+                  <option>Student</option>
+                  <option>Graduate</option>
+                  <option>Mid level</option>
+                  <option>Experienced</option>
+                </select>
+              </div>
+
+              <div class="filter-field">
+                <label for="opportunityPay">Compensation</label>
+                <select id="opportunityPay">
+                  <option value="">Any compensation</option>
+                  <option>Paid</option>
+                  <option>Unpaid</option>
+                  <option>Fully funded</option>
+                </select>
+              </div>
             </div>
-            <div class="opportunity-search-actions"><p>Matching opportunities will be listed below inside SkillBridge. Open the original provider page only when you choose to apply.</p><button class="btn btn-primary" type="submit">Search opportunities</button></div>
+
+            <div class="opportunity-search-actions">
+              <p>Matching opportunities will be listed below inside SkillBridge. Open the original provider page only when you choose to apply.</p>
+              <button class="btn btn-primary" type="submit">Search opportunities</button>
+            </div>
           </form>
-          <div class="search-suggestions"><span>Popular searches:</span><button type="button" data-opportunity-suggestion="remote entry level jobs">Remote entry-level jobs</button><button type="button" data-opportunity-suggestion="fully funded scholarships for international students">Fully funded scholarships</button><button type="button" data-opportunity-suggestion="paid internships for students">Paid internships</button><button type="button" data-opportunity-suggestion="remote freelance projects for beginners">Freelance projects</button></div>
+
+          <div class="search-suggestions">
+            <span>Popular searches:</span>
+            <button type="button" data-opportunity-suggestion="remote entry level jobs">Remote entry-level jobs</button>
+            <button type="button" data-opportunity-suggestion="fully funded scholarships for international students">Fully funded scholarships</button>
+            <button type="button" data-opportunity-suggestion="paid internships for students">Paid internships</button>
+            <button type="button" data-opportunity-suggestion="remote freelance projects for beginners">Freelance projects</button>
+          </div>
+
           <section class="opportunity-results-section" aria-live="polite">
-            <div class="results-heading"><div><span class="eyebrow">MATCHED FOR YOUR SEARCH</span><h2 id="opportunityResultsTitle">Discover opportunities</h2><p id="opportunityResultsMeta">Use the filters above to find relevant opportunities.</p></div><button class="btn btn-outline" id="refreshOpportunitiesBtn" type="button">↻ Refresh results</button></div>
+            <div class="results-heading">
+              <div>
+                <span class="eyebrow">MATCHED FOR YOUR SEARCH</span>
+                <h2 id="opportunityResultsTitle">Discover opportunities</h2>
+                <p id="opportunityResultsMeta">Use the filters above to find relevant opportunities.</p>
+              </div>
+              <button class="btn btn-outline" id="refreshOpportunitiesBtn" type="button">↻ Refresh results</button>
+            </div>
+
             <div id="opportunitySearchStatus" class="search-status" role="status"></div>
-            <div id="opportunityResults" class="discovery-results"><div class="empty-results"><strong>Find your next opportunity.</strong><p>Database listings will be displayed here in an organised list.</p></div></div>
+
+            <div id="opportunityResults" class="discovery-results">
+              <div class="empty-results">
+                <strong>Find your next opportunity.</strong>
+                <p>Database listings will be displayed here in an organised list.</p>
+              </div>
+            </div>
           </section>
-          <div class="opportunity-search-note"><strong>Search transparency</strong><p>Listings are managed in the SkillBridge database. Verify eligibility, deadlines and legitimacy on the original provider's website before applying.</p></div>
+
+          <div class="opportunity-search-note">
+            <strong>Search transparency</strong>
+            <p>Listings are managed in the SkillBridge database. Verify eligibility, deadlines and legitimacy on the original provider's website before applying.</p>
+          </div>
         </section>
 
         <!-- PROFILE -->
@@ -795,6 +930,7 @@
             <div class="profile-header">
               <div class="profile-photo-wrap">
                 <span class="profile-avatar-large" id="profileAvatar">U</span>
+
                 <div class="profile-photo-actions">
                   <label class="btn btn-outline profile-photo-button" for="profileImageInput">Upload photo</label>
                   <button class="text-action remove-photo-btn" id="removeProfileImage" type="button">Remove photo</button>
@@ -802,6 +938,7 @@
                   <small>JPG, PNG or WebP · up to 5 MB</small>
                 </div>
               </div>
+
               <div>
                 <h2 id="profileDisplayName">Your profile</h2>
                 <p class="muted" id="profileDisplayEmail"></p>
@@ -848,10 +985,12 @@
 
   <!-- JAVASCRIPT FILES -->
   <script src="/auth.js" defer></script>
-<script src="/dashboard.js" defer></script>
-<script src="/skills.js" defer></script>
-<script src="/opportunities.js" defer></script>
-<script src="/learning.js" defer></script>
-<script src="/app.js" defer></script>
+  <script src="/dashboard.js" defer></script>
+  <script src="/skills.js" defer></script>
+  <script src="/opportunities.js" defer></script>
+  <script src="/learning.js" defer></script>
+  <script src="/app.js" defer></script>
+
 </body>
 </html>
+
