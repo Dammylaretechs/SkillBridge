@@ -34,9 +34,11 @@ app.use(session({
 }));
 // Serve only browser-facing assets. Do not expose server.js, package.json,
 // README files, SQL examples, or other project files over HTTP.
-app.use('/css', express.static(path.join(__dirname, 'css')));
-app.use('/js', express.static(path.join(__dirname, 'js')));
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+// Serve frontend files directly from the project root
+app.use(express.static(__dirname, {
+  index: false,
+  dotfiles: 'deny'
+}));
 
 const schema = `
 CREATE TABLE IF NOT EXISTS users (
