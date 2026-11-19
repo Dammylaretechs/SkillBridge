@@ -1,0 +1,858 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillBridge connects learning, practical experience and income opportunities.">
+  <meta name="theme-color" content="#0b1728">
+  <title>SkillBridge — Learn. Prove. Earn.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("skillbridge-theme");
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = savedTheme || preferredTheme;
+      } catch (_) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="assets/skillbridge-logo-html.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- UPDATED SKILLBRIDGE LOGO DIMENSIONS -->
+  <style>
+    .brand-logo {
+      display: block;
+      width: 145px;
+      height: auto;
+      max-width: 100%;
+      max-height: 40px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .site-header .brand-logo {
+      width: 145px;
+      max-height: 40px;
+    }
+
+    .sidebar-brand .brand-logo {
+      width: 140px;
+      max-height: 38px;
+    }
+
+    .auth-aside .brand-logo {
+      width: 150px;
+      max-height: 41px;
+    }
+
+    .site-footer .brand-logo {
+      width: 130px;
+      max-height: 36px;
+    }
+
+    @media (max-width: 768px) {
+      .site-header .brand-logo {
+        width: 120px;
+        max-height: 33px;
+      }
+
+      .sidebar-brand .brand-logo,
+      .auth-aside .brand-logo {
+        width: 130px;
+        max-height: 36px;
+      }
+
+      .site-footer .brand-logo {
+        width: 115px;
+        max-height: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- PUBLIC LANDING PAGE -->
+  <main id="landingView" class="view">
+
+    <header class="site-header container">
+      <a class="brand" href="#" data-view="landing" aria-label="SkillBridge home">
+        <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pathways">Explore pathways</a>
+        <a href="#mission">Our mission</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch theme">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle-label">Dark mode</span>
+        </button>
+
+        <button class="btn btn-ghost" data-view="login">Log in</button>
+        <button class="btn btn-primary" data-view="signup">
+          Get started <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          OPPORTUNITY SHOULD BE ACCESSIBLE TO EVERYONE
+        </div>
+
+        <h1>Your skills can take you <span class="text-gradient">further.</span></h1>
+
+        <p class="hero-lead">
+          Build practical skills, prove what you can do, and connect with opportunities that move your life forward.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-large" data-view="signup">
+            Start your journey <span aria-hidden="true">→</span>
+          </button>
+          <a class="btn btn-outline btn-large" href="#how-it-works">See how it works</a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="avatar-stack">
+            <span>AO</span>
+            <span>MK</span>
+            <span>JD</span>
+            <span>+</span>
+          </div>
+
+          <p>
+            <strong>Skills to opportunity.</strong><br>
+            <span class="muted">A clearer path to earning and growth.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Illustration of a skills and opportunity dashboard">
+        <div class="visual-glow"></div>
+
+        <div class="floating-tag tag-top">
+          <span class="tag-icon">✦</span>
+          Your next step starts here
+        </div>
+
+        <div class="dashboard-preview">
+          <div class="preview-top">
+            <div>
+              <span class="preview-kicker">YOUR LEARNING JOURNEY</span>
+              <h3>Keep moving forward</h3>
+            </div>
+            <span class="preview-menu">•••</span>
+          </div>
+
+          <div class="preview-progress">
+            <div class="progress-ring">
+              <div>
+                <strong>68%</strong>
+                <small>complete</small>
+              </div>
+            </div>
+
+            <div>
+              <strong>You're making progress</strong>
+              <p>Keep building your skills to unlock new opportunities.</p>
+              <span class="mini-link">View learning plan →</span>
+            </div>
+          </div>
+
+          <div class="preview-divider"></div>
+
+          <div class="preview-bottom">
+            <div>
+              <span class="preview-kicker">RECOMMENDED NEXT STEP</span>
+              <strong>Complete your project portfolio</strong>
+            </div>
+            <span class="preview-arrow">↗</span>
+          </div>
+        </div>
+
+        <div class="floating-card opportunity-card">
+          <span class="opportunity-icon">↗</span>
+          <div>
+            <strong>New opportunities</strong>
+            <small>Discover roles that match your skills</small>
+          </div>
+        </div>
+
+        <div class="floating-card verified-card">
+          <span class="verified-icon">✓</span>
+          <div>
+            <strong>Skills you can prove</strong>
+            <small>Showcase practical ability</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEY STRIP -->
+    <section class="trust-strip">
+      <div class="container trust-inner">
+        <span>ONE CONNECTED JOURNEY</span>
+        <div>
+          <b>LEARN</b><i>→</i>
+          <b>DEMONSTRATE</b><i>→</i>
+          <b>CONNECT</b><i>→</i>
+          <b>EARN</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="section container">
+      <div class="section-heading">
+        <span class="eyebrow">HOW SKILLBRIDGE WORKS</span>
+        <h2>Turn potential into <span class="text-gradient">possibility.</span></h2>
+        <p>We bring the steps between learning and earning into one connected experience.</p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <div class="step-icon">◎</div>
+          <h3>Discover your strengths</h3>
+          <p>Understand your existing abilities, interests and the skills employers and customers need.</p>
+        </article>
+
+        <article class="step-card featured-step">
+          <span class="step-number">02</span>
+          <div class="step-icon">⌁</div>
+          <h3>Build practical skills</h3>
+          <p>Follow a learning path, practise with real tasks and develop evidence of what you can do.</p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <div class="step-icon">↗</div>
+          <h3>Access opportunities</h3>
+          <p>Present your abilities and connect with jobs, apprenticeships and income-generating work.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PATHWAYS -->
+    <section id="pathways" class="section pathways-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">EXPLORE YOUR PATH</span>
+          <h2>Skills for a changing world.</h2>
+          <p>Start with a direction that fits your interests and goals.</p>
+        </div>
+
+        <div class="pathway-grid">
+          <article class="pathway-card">
+            <span class="pathway-symbol">⌘</span>
+            <div>
+              <h3>Digital & technology</h3>
+              <p>Software, data, design and digital work.</p>
+            </div>
+            <span class="pathway-arrow">↗</span>
+          </article>
+
+          <article class="pathway-card">
+            <span class="pathway-symbol">⚙</span>
+            <div>
+              <h3>Technical & vocational</h3>
+              <p>Hands-on skills for practical careers.</p>
+            </div>
+            <span class="pathway-arrow">↗</span>
+          </article>
+
+          <article class="pathway-card">
+            <span class="pathway-symbol">▤</span>
+            <div>
+              <h3>Business & enterprise</h3>
+              <p>Build, manage and grow a business.</p>
+            </div>
+            <span class="pathway-arrow">↗</span>
+          </article>
+
+          <article class="pathway-card">
+            <span class="pathway-symbol">✳</span>
+            <div>
+              <h3>Creative & professional</h3>
+              <p>Turn creative strengths into work.</p>
+            </div>
+            <span class="pathway-arrow">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION -->
+    <section id="mission" class="mission-section container">
+      <div class="mission-panel">
+        <div>
+          <span class="eyebrow">WHY WE EXIST</span>
+          <h2>Opportunity shouldn't depend on where you start.</h2>
+
+          <p>
+            SkillBridge is being built to help reduce the distance between a person's potential and the opportunities to use it. We believe practical skills, credible experience and access to work can contribute to stronger livelihoods.
+          </p>
+
+          <button class="btn btn-primary" data-view="signup">
+            Be part of the journey <span>→</span>
+          </button>
+        </div>
+
+        <div class="mission-stat">
+          <span class="stat-orbit">✳</span>
+          <strong>Skills →</strong>
+          <strong>Confidence →</strong>
+          <strong>Opportunity →</strong>
+          <strong class="green-text">Income</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="brand" href="#">
+          <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+        </a>
+
+        <p>Learn skills. Prove your ability. Build your future.</p>
+        <span>© <span id="year"></span> SkillBridge. Built for opportunity.</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- AUTHENTICATION -->
+  <main id="authView" class="view auth-view hidden">
+
+    <div class="auth-aside">
+      <a class="brand" href="#" data-view="landing">
+        <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+      </a>
+
+      <div class="auth-aside-content">
+        <span class="eyebrow">YOUR NEXT CHAPTER</span>
+        <h1>Make your ability <span class="text-gradient">count.</span></h1>
+        <p>Build the skills, experience and connections to move towards meaningful work.</p>
+
+        <div class="auth-quote">
+          <span>“</span>
+          <p>Your starting point does not have to define your destination.</p>
+        </div>
+      </div>
+
+      <span class="aside-foot">A connected path from learning to opportunity.</span>
+    </div>
+
+    <div class="auth-main">
+      <div class="auth-main-tools">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch theme">
+          <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+          <span class="theme-toggle-label">Dark mode</span>
+        </button>
+      </div>
+
+      <button class="back-link" data-view="landing">← Back to home</button>
+
+      <section class="auth-card">
+        <div class="auth-tabs">
+          <button id="loginTab" class="auth-tab active" type="button">Log in</button>
+          <button id="signupTab" class="auth-tab" type="button">Create account</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="loginFormWrap">
+          <span class="eyebrow">WELCOME BACK</span>
+          <h2>Log in to SkillBridge</h2>
+          <p class="form-intro">Pick up where you left off.</p>
+
+          <form id="loginForm">
+            <label for="loginEmail">Email address</label>
+            <input id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+            <label for="loginPassword">Password</label>
+            <div class="password-wrap">
+              <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+              <button type="button" class="password-toggle" data-toggle="loginPassword">Show</button>
+            </div>
+
+            <button class="btn btn-primary btn-full" type="submit">
+              Log in <span>→</span>
+            </button>
+          </form>
+
+          <p class="auth-switch">
+            New to SkillBridge?
+            <button type="button" data-auth-tab="signup">Create an account</button>
+          </p>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div id="signupFormWrap" class="hidden">
+          <span class="eyebrow">GET STARTED</span>
+          <h2>Create your account</h2>
+          <p class="form-intro">Your journey towards new opportunities starts here.</p>
+
+          <form id="signupForm">
+            <label for="signupName">Full name</label>
+            <input id="signupName" type="text" autocomplete="name" placeholder="Your full name" required minlength="2">
+
+            <label for="signupEmail">Email address</label>
+            <input id="signupEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+            <label for="signupPassword">Create password</label>
+            <div class="password-wrap">
+              <input id="signupPassword" type="password" autocomplete="new-password" placeholder="At least 8 characters" required minlength="8">
+              <button type="button" class="password-toggle" data-toggle="signupPassword">Show</button>
+            </div>
+
+            <label for="signupGoal">What would you like help with?</label>
+            <select id="signupGoal">
+              <option>Finding employment</option>
+              <option>Learning a new skill</option>
+              <option>Finding an apprenticeship</option>
+              <option>Growing a small business</option>
+              <option>Exploring career options</option>
+            </select>
+
+            <button class="btn btn-primary btn-full" type="submit">
+              Create my account <span>→</span>
+            </button>
+          </form>
+
+          <p class="auth-switch">
+            Already have an account?
+            <button type="button" data-auth-tab="login">Log in</button>
+          </p>
+        </div>
+
+        <p class="demo-note">
+          <span>ⓘ</span>
+          Your account and skills are securely stored in the SkillBridge database.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- SIGNED-IN APPLICATION -->
+  <main id="appView" class="view app-view hidden">
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand sidebar-brand" href="#" data-view="dashboard">
+        <img class="brand-logo" src="assets/skillbridge-logo-html.png" alt="SkillBridge — Bridging Skills to Opportunities">
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+
+      <nav class="side-nav">
+        <button class="side-link active" data-page="dashboard"><span>▦</span> Overview</button>
+        <button class="side-link" data-page="skills"><span>⌘</span> My skills</button>
+        <button class="side-link" data-page="learning"><span>▤</span> Learning centre</button>
+        <button class="side-link" data-page="opportunities"><span>↗</span> Opportunities <span class="nav-count">3</span></button>
+        <button class="side-link" data-page="profile"><span>◉</span> My profile</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon">✦</span>
+          <strong>Need a little guidance?</strong>
+          <p>Your next step can start with a conversation.</p>
+          <button data-page="skills">Explore your skills →</button>
+        </div>
+
+        <button class="side-link logout-link" id="logoutBtn">
+          <span>↪</span> Log out
+        </button>
+      </div>
+    </aside>
+
+    <section class="app-main">
+      <header class="app-topbar">
+        <button class="mobile-menu-btn app-menu-btn" id="appMenuBtn" aria-label="Toggle sidebar">☰</button>
+
+        <div class="breadcrumb">
+          Workspace <span>/</span> <strong id="pageCrumb">Overview</strong>
+        </div>
+
+        <div class="topbar-right">
+          <span class="topbar-date" id="todayLabel"></span>
+
+          <button class="theme-toggle theme-toggle-compact" type="button" data-theme-toggle aria-label="Switch to dark mode" title="Switch theme">
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span class="theme-toggle-label">Dark</span>
+          </button>
+
+          <button class="icon-btn" aria-label="Notifications" id="notificationBtn">♧<i></i></button>
+
+          <button class="user-chip" data-page="profile">
+            <span class="user-avatar" id="topAvatar" aria-label="Profile image or initials">U</span>
+            <span id="topUserName">User</span>
+            <span>⌄</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="app-content">
+
+        <!-- DASHBOARD -->
+        <section class="app-page active" id="page-dashboard">
+          <div class="welcome-row">
+            <div>
+              <span class="eyebrow">YOUR SKILLBRIDGE WORKSPACE</span>
+              <h1>Good to see you, <span id="welcomeName">there</span>.</h1>
+              <p>Small steps today can open up new opportunities tomorrow.</p>
+            </div>
+
+            <button class="btn btn-primary" data-page="skills">
+              Explore my next step <span>→</span>
+            </button>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="stat-card">
+              <span class="stat-label">Profile completion</span>
+              <div class="stat-value">
+                <strong id="profilePercent">25%</strong>
+                <span class="stat-icon purple">◉</span>
+              </div>
+              <div class="progress-track">
+                <span id="profileBar" style="width:25%"></span>
+              </div>
+              <small>Build a stronger profile to get discovered.</small>
+            </article>
+
+            <article class="stat-card">
+              <span class="stat-label">Skills added</span>
+              <div class="stat-value">
+                <strong id="skillsCount">0</strong>
+                <span class="stat-icon teal">⌘</span>
+              </div>
+              <small>Add skills you already have or want to build.</small>
+            </article>
+
+            <article class="stat-card">
+              <span class="stat-label">Learning pathways</span>
+              <div class="stat-value">
+                <strong>4</strong>
+                <span class="stat-icon orange">▤</span>
+              </div>
+              <small>Explore learning directions that fit your goals.</small>
+            </article>
+          </div>
+
+          <div class="content-grid">
+            <article class="panel journey-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">YOUR JOURNEY</span>
+                  <h2>Build towards your goal</h2>
+                </div>
+                <span class="soft-pill">Getting started</span>
+              </div>
+
+              <div class="journey-list">
+                <div class="journey-item complete">
+                  <span class="journey-check">✓</span>
+                  <div>
+                    <strong>Create your account</strong>
+                    <p>Your SkillBridge workspace is ready.</p>
+                  </div>
+                  <span class="journey-status">Done</span>
+                </div>
+
+                <div class="journey-item">
+                  <span class="journey-number">2</span>
+                  <div>
+                    <strong>Complete your profile</strong>
+                    <p>Tell us about your interests and experience.</p>
+                  </div>
+                  <button data-page="profile">Start →</button>
+                </div>
+
+                <div class="journey-item">
+                  <span class="journey-number">3</span>
+                  <div>
+                    <strong>Add your skills</strong>
+                    <p>Show what you can do and what you want to learn.</p>
+                  </div>
+                  <button data-page="skills">Add skills →</button>
+                </div>
+
+                <div class="journey-item">
+                  <span class="journey-number">4</span>
+                  <div>
+                    <strong>Explore opportunities</strong>
+                    <p>Discover jobs, projects and apprenticeships.</p>
+                  </div>
+                  <button data-page="opportunities">Explore →</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel goal-panel">
+              <span class="eyebrow">YOUR CURRENT GOAL</span>
+              <div class="goal-art">↗</div>
+              <h2 id="goalTitle">Find employment</h2>
+              <p id="goalDescription">Build your profile and explore opportunities that match your interests.</p>
+              <button class="btn btn-outline btn-full" data-page="profile">Update my goal</button>
+            </article>
+          </div>
+
+          <div class="panel quick-panel">
+            <div>
+              <span class="eyebrow">A GOOD PLACE TO START</span>
+              <h2>Every skill has a starting point.</h2>
+              <p>Explore a learning pathway and take one practical step towards your goal.</p>
+            </div>
+            <button class="btn btn-primary" data-page="learning">Visit learning centre →</button>
+          </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="app-page" id="page-skills">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">YOUR CAPABILITIES</span>
+              <h1>My skills</h1>
+              <p>Keep track of what you can do and what you want to learn next.</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <h2>My skill profile</h2>
+                <p class="muted">Add skills to start building your profile.</p>
+              </div>
+            </div>
+
+            <form id="skillForm" class="inline-form">
+              <input id="skillInput" placeholder="e.g. Excel, plumbing, graphic design" aria-label="Skill name" required>
+
+              <select id="skillLevel" aria-label="Skill level">
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+
+              <button class="btn btn-primary" type="submit">Add skill +</button>
+            </form>
+
+            <div id="skillList" class="skill-list">
+              <div class="empty-state">
+                <span>⌘</span>
+                <strong>Your skills will appear here</strong>
+                <p>Add a skill you already have or want to develop.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel suggestion-panel">
+            <h2>Skills worth exploring</h2>
+
+            <div class="suggestion-tags">
+              <button data-skill="Communication">Communication +</button>
+              <button data-skill="Digital literacy">Digital literacy +</button>
+              <button data-skill="Problem solving">Problem solving +</button>
+              <button data-skill="Customer service">Customer service +</button>
+              <button data-skill="Data analysis">Data analysis +</button>
+              <button data-skill="Electrical installation">Electrical installation +</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LEARNING CENTRE -->
+        <section class="app-page" id="page-learning">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">GROW YOUR ABILITY</span>
+              <h1>Learning centre</h1>
+              <p>Discover courses and practical learning resources from trusted platforms.</p>
+            </div>
+          </div>
+
+          <div class="learning-search panel">
+            <label for="courseSearch">What would you like to learn?</label>
+            <div class="learning-search-row">
+              <input id="courseSearch" type="search" placeholder="e.g. web development, graphic design, Excel, electrical installation">
+              <button class="btn btn-primary" id="courseSearchBtn" type="button">Find courses</button>
+            </div>
+            <p class="learning-hint">Course matches will appear here in SkillBridge. Choose a platform to narrow the results, or search across all supported platforms.</p>
+          </div>
+
+          <div class="platform-filter-bar"><span>Browse by platform</span><button class="btn btn-outline platform-search" id="allPlatformsBtn" type="button">All platforms</button></div>
+          <div class="learning-platform-grid">
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark youtube-mark">▶</span><div><h3>YouTube</h3><p>Video lessons, tutorials and practical demonstrations</p></div></div>
+              <span class="soft-pill">Free resources available</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="youtube">Show YouTube courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark coursera-mark">C</span><div><h3>Coursera</h3><p>Courses and professional certificates from institutions</p></div></div>
+              <span class="soft-pill">Free and paid options</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="coursera">Show Coursera courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark alison-mark">A</span><div><h3>Alison</h3><p>Career-focused courses across many subject areas</p></div></div>
+              <span class="soft-pill">Free learning options</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="alison">Show Alison courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark edx-mark">edX</span><div><h3>edX</h3><p>Academic and professional courses from universities</p></div></div>
+              <span class="soft-pill">Audit and paid options</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="edx">Show edX courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark udemy-mark">U</span><div><h3>Udemy</h3><p>Practical, topic-based courses taught by instructors</p></div></div>
+              <span class="soft-pill">Mostly paid courses</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="udemy">Show Udemy courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark fcc-mark">{ }</span><div><h3>freeCodeCamp</h3><p>Free coding lessons, projects and certifications</p></div></div>
+              <span class="soft-pill">Free</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="freecodecamp">Show freeCodeCamp courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark khan-mark">K</span><div><h3>Khan Academy</h3><p>Free foundational lessons in academic subjects</p></div></div>
+              <span class="soft-pill">Free</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="khan">Show Khan Academy courses</button>
+            </article>
+            <article class="learning-platform-card">
+              <div class="platform-heading"><span class="platform-mark microsoft-mark">M</span><div><h3>Microsoft Learn</h3><p>Technical training and learning paths for Microsoft tools</p></div></div>
+              <span class="soft-pill">Free learning paths</span>
+              <button class="btn btn-outline platform-search" type="button" data-platform="microsoft">Show Microsoft Learn courses</button>
+            </article>
+          </div>
+          <section class="course-results-section" aria-live="polite">
+            <div class="results-heading"><div><span class="eyebrow">COURSE DISCOVERY</span><h2 id="courseResultsTitle">Explore learning resources</h2><p id="courseResultsMeta">Search a topic to see course and learning-resource listings from supported platforms.</p></div><button class="btn btn-outline" id="refreshCoursesBtn" type="button">↻ Refresh courses</button></div>
+            <div id="courseSearchStatus" class="search-status" role="status"></div>
+            <div id="courseResults" class="discovery-results"><div class="empty-results"><strong>Your next skill starts here.</strong><p>Search for a subject above. Course options will be organised here, without sending you to Google.</p></div></div>
+          </section>
+          <p class="demo-disclaimer">Course listings are retrieved from web search results. SkillBridge does not own these courses; availability, pricing, certificates and access requirements are controlled by each provider.</p>
+        </section>
+
+        <!-- OPPORTUNITIES -->
+        <section class="app-page" id="page-opportunities">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">TAKE YOUR NEXT STEP</span>
+              <h1>Opportunity discovery</h1>
+              <p>Search opportunities stored in the SkillBridge database, matched to your skills and circumstances.</p>
+            </div>
+          </div>
+
+          <form class="opportunity-search-panel panel" id="opportunitySearchForm">
+            <div class="opportunity-filter-grid">
+              <div class="filter-field filter-wide"><label for="opportunitySearch">Keywords, role or skill</label><input id="opportunitySearch" type="search" placeholder="e.g. junior developer, tailoring, data analysis"></div>
+              <div class="filter-field"><label for="opportunityType">Opportunity type</label><select id="opportunityType"><option value="">All opportunities</option><option>Jobs</option><option>Internships</option><option>Apprenticeships</option><option>Scholarships</option><option>Grants</option><option>Freelance projects</option><option>Volunteering</option></select></div>
+              <div class="filter-field"><label for="opportunityLocation">Location</label><input id="opportunityLocation" placeholder="e.g. Nigeria, Lagos, worldwide"></div>
+              <div class="filter-field"><label for="opportunityMode">Work arrangement</label><select id="opportunityMode"><option value="">Any arrangement</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></div>
+              <div class="filter-field"><label for="opportunityLevel">Experience / study level</label><select id="opportunityLevel"><option value="">Any level</option><option>Entry level</option><option>Beginner</option><option>Student</option><option>Graduate</option><option>Mid level</option><option>Experienced</option></select></div>
+              <div class="filter-field"><label for="opportunityPay">Compensation</label><select id="opportunityPay"><option value="">Any compensation</option><option>Paid</option><option>Unpaid</option><option>Fully funded</option></select></div>
+            </div>
+            <div class="opportunity-search-actions"><p>Matching opportunities will be listed below inside SkillBridge. Open the original provider page only when you choose to apply.</p><button class="btn btn-primary" type="submit">Search opportunities</button></div>
+          </form>
+          <div class="search-suggestions"><span>Popular searches:</span><button type="button" data-opportunity-suggestion="remote entry level jobs">Remote entry-level jobs</button><button type="button" data-opportunity-suggestion="fully funded scholarships for international students">Fully funded scholarships</button><button type="button" data-opportunity-suggestion="paid internships for students">Paid internships</button><button type="button" data-opportunity-suggestion="remote freelance projects for beginners">Freelance projects</button></div>
+          <section class="opportunity-results-section" aria-live="polite">
+            <div class="results-heading"><div><span class="eyebrow">MATCHED FOR YOUR SEARCH</span><h2 id="opportunityResultsTitle">Discover opportunities</h2><p id="opportunityResultsMeta">Use the filters above to find relevant opportunities.</p></div><button class="btn btn-outline" id="refreshOpportunitiesBtn" type="button">↻ Refresh results</button></div>
+            <div id="opportunitySearchStatus" class="search-status" role="status"></div>
+            <div id="opportunityResults" class="discovery-results"><div class="empty-results"><strong>Find your next opportunity.</strong><p>Database listings will be displayed here in an organised list.</p></div></div>
+          </section>
+          <div class="opportunity-search-note"><strong>Search transparency</strong><p>Listings are managed in the SkillBridge database. Verify eligibility, deadlines and legitimacy on the original provider's website before applying.</p></div>
+        </section>
+
+        <!-- PROFILE -->
+        <section class="app-page" id="page-profile">
+          <div class="page-heading">
+            <div>
+              <span class="eyebrow">YOUR INFORMATION</span>
+              <h1>My profile</h1>
+              <p>Help SkillBridge understand your goals and experience.</p>
+            </div>
+          </div>
+
+          <div class="panel profile-panel">
+            <div class="profile-header">
+              <div class="profile-photo-wrap">
+                <span class="profile-avatar-large" id="profileAvatar">U</span>
+                <div class="profile-photo-actions">
+                  <label class="btn btn-outline profile-photo-button" for="profileImageInput">Upload photo</label>
+                  <button class="text-action remove-photo-btn" id="removeProfileImage" type="button">Remove photo</button>
+                  <input id="profileImageInput" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+                  <small>JPG, PNG or WebP · up to 5 MB</small>
+                </div>
+              </div>
+              <div>
+                <h2 id="profileDisplayName">Your profile</h2>
+                <p class="muted" id="profileDisplayEmail"></p>
+              </div>
+            </div>
+
+            <form id="profileForm" class="profile-form">
+              <div class="form-two">
+                <div>
+                  <label for="profileName">Full name</label>
+                  <input id="profileName" required>
+                </div>
+
+                <div>
+                  <label for="profileLocation">Location</label>
+                  <input id="profileLocation" placeholder="e.g. Ibadan, Nigeria">
+                </div>
+              </div>
+
+              <div>
+                <label for="profileInterest">Area of interest</label>
+                <select id="profileInterest">
+                  <option>Digital and technology</option>
+                  <option>Technical and vocational</option>
+                  <option>Business and enterprise</option>
+                  <option>Creative and professional</option>
+                  <option>Still exploring</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="profileBio">A little about you</label>
+                <textarea id="profileBio" rows="4" placeholder="Tell us about your experience, interests or goals..."></textarea>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Save profile</button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/skills.js"></script>
+  <script src="js/opportunities.js"></script>
+  <script src="js/learning.js"></script>
+
+</body>
+</html>
