@@ -168,9 +168,59 @@ html[data-theme="dark"] .opportunity-search-note p{color:#a5c7b8}
 
 /* In-site live discovery results */
 .results-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:28px 0 14px}.results-heading h2{font:800 20px Manrope;color:var(--navy);margin:5px 0}.results-heading p{font-size:11px;color:#82909b;margin:0;line-height:1.6}.results-heading .btn{white-space:nowrap}.search-status{min-height:18px;margin:8px 0 12px;font-size:10px;color:#16845f}.discovery-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.discovery-result-card,.empty-results,.loading-results{min-width:0;padding:18px;background:#fff;border:1px solid #e6edef;border-radius:13px}.discovery-result-card h3{font:700 13px/1.5 Manrope;color:var(--navy);margin:10px 0 7px;overflow-wrap:anywhere}.discovery-result-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.result-source{display:inline-flex;max-width:100%;padding:5px 8px;border-radius:20px;background:#eaf8f1;color:#147b58;font-size:9px;font-weight:700;overflow-wrap:anywhere}.result-description{font-size:10px;line-height:1.7;color:#7c8b97;margin:0 0 14px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.result-link{display:inline-flex;text-decoration:none;font-size:10px;padding:9px 12px}.empty-results,.loading-results{grid-column:1/-1;text-align:center;padding:30px 18px;color:#7e8d98}.empty-results strong{display:block;color:var(--navy);font:700 13px Manrope;margin-bottom:6px}.empty-results p{font-size:10px;line-height:1.7;margin:0}.platform-selected{border-color:var(--emerald)!important;box-shadow:0 0 0 2px #10a77920}.course-results-section,.opportunity-results-section{margin-top:20px}
+
 html[data-theme="dark"] .discovery-result-card,html[data-theme="dark"] .empty-results,html[data-theme="dark"] .loading-results{background:#172635;border-color:#2c3d4c}
 html[data-theme="dark"] .results-heading h2,html[data-theme="dark"] .discovery-result-card h3,html[data-theme="dark"] .empty-results strong{color:#e7edf3}
 html[data-theme="dark"] .results-heading p,html[data-theme="dark"] .result-description,html[data-theme="dark"] .empty-results,html[data-theme="dark"] .loading-results{color:#9eacba}
 html[data-theme="dark"] .search-status{color:#82d8b5}
 @media(max-width:700px){.discovery-results{grid-template-columns:1fr}.results-heading{align-items:flex-start;flex-direction:column}.results-heading .btn{width:100%}}
 .platform-filter-bar{display:flex;align-items:center;gap:12px;margin:14px 0}.platform-filter-bar>span{font-size:10px;font-weight:700;color:#718090}.platform-filter-bar .btn{font-size:10px;padding:8px 12px}
+
+
+
+/* SkillBridge logo image — updated styling */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+}
+
+.brand img,
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    display: block;
+    flex: 0 0 46px;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Sidebar logo */
+.sidebar-brand .brand img,
+.sidebar-brand .brand-mark {
+    width: 43px;
+    height: 43px;
+    flex-basis: 43px;
+}
+
+/* Authentication logo */
+.auth-aside .brand img,
+.auth-aside .brand-mark {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+}
+
+/* Mobile logo */
+@media (max-width: 700px) {
+    .brand img,
+    .brand-mark {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+}
